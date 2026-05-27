@@ -36,6 +36,16 @@ const io = new IntersectionObserver(entries => {
 }, { rootMargin: "-40% 0px -50% 0px" });
 sections.forEach(s => io.observe(s));
 
+// Soundtrack — intenta autoplay; si el navegador lo bloquea, arranca al primer click
+const audio = document.getElementById("soundtrack");
+if (audio) {
+  audio.volume = 0.6;
+  audio.play().catch(() => {
+    const unlock = () => { audio.play(); document.removeEventListener("click", unlock); };
+    document.addEventListener("click", unlock);
+  });
+}
+
 // ── Glitch idle en título del tease ──
 const title = document.querySelector(".tease-title");
 if (title) {

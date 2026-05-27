@@ -18,6 +18,16 @@ const io = new IntersectionObserver((entries) => {
 
 sections.forEach(s => io.observe(s));
 
+// Soundtrack — intenta autoplay; si el navegador lo bloquea, arranca al primer click
+const audio = document.getElementById("soundtrack");
+if (audio) {
+  audio.volume = 0.4;
+  audio.play().catch(() => {
+    const unlock = () => { audio.play(); document.removeEventListener("click", unlock); };
+    document.addEventListener("click", unlock);
+  });
+}
+
 // Glitch ocasional en el título
 const title = document.querySelector(".hero-title");
 if (title) {
