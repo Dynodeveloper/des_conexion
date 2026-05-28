@@ -153,7 +153,7 @@
             <span class="number">1.500.000</span>
           </div>
           <div class="price-sub">pago único · suscripción opcional</div>
-          <a href="#" class="btn btn-primary full">RESERVAR AHORA</a>
+          <button id="btnReservar" class="btn btn-primary full">RESERVAR AHORA</button>
           <div class="price-fine">
             Al reservar aceptas el monitoreo continuo de tus parámetros vitales,
             emocionales y cognitivos.
@@ -189,6 +189,24 @@
     </div>
   </footer>
 
+  <!-- MODAL DE COMPRA -->
+  <div class="modal-overlay" id="purchaseModal">
+    <div class="modal-box">
+      <button class="modal-close" onclick="closePurchaseModal()">✕</button>
+      <div class="modal-content">
+        <div class="modal-badge">// COMPRA COMPLETADA</div>
+        <h2 class="modal-title">GRACIAS POR TU COMPRA</h2>
+        <p class="modal-text">Tu NEURO-VR ha sido reservado exitosamente.</p>
+        <p class="modal-subtext">Acércate a un agente de ventas para completar tu instalación y sincronización.</p>
+        <div class="modal-actions">
+          <!-- <button class="btn btn-secondary" onclick="closePurchaseModal()">RECLAMA TU NEURO-VR</button> -->
+          <a href="desconexion.html" class="btn btn-primary">EXPLORAR DESCONEXION</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- <audio id="soundtrack" src="assets/soundtrack.wav" loop preload="auto"></audio> -->
   <script src="script.js"></script>
 </body>
 </html>

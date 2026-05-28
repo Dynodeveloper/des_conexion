@@ -18,6 +18,24 @@ const io = new IntersectionObserver((entries) => {
 
 sections.forEach(s => io.observe(s));
 
+// Modal de compra
+const btnReservar = document.getElementById("btnReservar");
+const purchaseModal = document.getElementById("purchaseModal");
+
+if (btnReservar) {
+  btnReservar.addEventListener("click", () => {
+    purchaseModal.classList.add("active");
+  });
+}
+
+function closePurchaseModal() {
+  purchaseModal.classList.remove("active");
+}
+
+purchaseModal?.addEventListener("click", (e) => {
+  if (e.target === purchaseModal) closePurchaseModal();
+});
+
 // Soundtrack — intenta autoplay; si el navegador lo bloquea, arranca al primer click
 const audio = document.getElementById("soundtrack");
 if (audio) {
