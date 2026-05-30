@@ -26,6 +26,7 @@
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+img { max-width: 100%; display: block; }
 html { scroll-behavior: smooth; }
 body {
   background: var(--bg);
@@ -648,12 +649,13 @@ a { color: inherit; text-decoration: none; }
 }
 
 /* ════════════════ SCOUTING — IMÁGENES ════════════════ */
-.scout-img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.scout-img { width: 100%; height: 100%; min-height: 160px; object-fit: cover; display: block; }
 
 /* ════════════════ FOTOGRAFÍA — IMÁGENES ════════════════ */
 img.foto-twin-img {
-  display: block; width: 100%; height: 100%;
-  object-fit: cover;
+  display: block; width: 100%;
+  min-height: 150px; max-height: 240px;
+  object-fit: cover; align-self: stretch;
 }
 .ilum-img {
   width: 100%; display: block;
