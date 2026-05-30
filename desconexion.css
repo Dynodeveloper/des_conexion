@@ -555,7 +555,37 @@ a { color: inherit; text-decoration: none; }
   border-radius: 2px;
 }
 
+/* ════════════════ FOTOGRAFÍA — PROPUESTA ════════════════ */
+.foto-propuesta { display: flex; flex-direction: column; gap: 16px; }
+.foto-heading {
+  font-family: var(--mono); font-size: 11px;
+  letter-spacing: 0.24em; color: var(--purple);
+  text-transform: uppercase;
+  padding: 20px 0 4px;
+  border-top: 1px solid var(--line-2);
+}
+.foto-heading:first-child { border-top: none; padding-top: 0; }
+.foto-twin-body {
+  display: grid; grid-template-columns: 200px 1fr;
+  align-items: stretch;
+}
+.foto-twin-img {
+  background: rgba(0,0,0,0.07);
+  border-right: 1px solid rgba(0,0,0,0.1);
+  min-height: 140px;
+}
+.ilum-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+.ilum-img-ph {
+  aspect-ratio: 4/3;
+  background: rgba(0,0,0,0.07);
+  border-top: 1px solid rgba(0,0,0,0.1);
+}
+
 /* ════════════════ PRODUCCIÓN — SCOUTING ════════════════ */
+.cast-title-label--spaced { margin-top: 40px; }
 .prod-section { background: var(--bg-2); }
 .dsubtitle {
   font-family: var(--mono); font-size: 11px;
@@ -595,6 +625,94 @@ a { color: inherit; text-decoration: none; }
   border-top: 1px solid rgba(0,0,0,0.1);
 }
 
+/* ════════════════ PERSONAJES — IMÁGENES ════════════════ */
+.char-img {
+  width: 100%; aspect-ratio: 3/4;
+  object-fit: cover; object-position: top;
+  border-radius: 2px; display: block;
+}
+
+/* ════════════════ DIRECCIÓN — IMÁGENES ════════════════ */
+.dir-img {
+  width: 100%; aspect-ratio: 16/9;
+  object-fit: cover; display: block;
+  border-radius: 2px;
+}
+.dir-refs-grid {
+  display: grid; grid-template-columns: repeat(2, 1fr);
+  gap: 8px; padding: 12px 14px;
+}
+.dir-ref-img {
+  width: 100%; aspect-ratio: 16/9;
+  object-fit: cover; display: block; border-radius: 2px;
+}
+
+/* ════════════════ SCOUTING — IMÁGENES ════════════════ */
+.scout-img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+/* ════════════════ FOTOGRAFÍA — IMÁGENES ════════════════ */
+img.foto-twin-img {
+  display: block; width: 100%; height: 100%;
+  object-fit: cover;
+}
+.ilum-img {
+  width: 100%; display: block;
+  border-top: 1px solid rgba(0,0,0,0.1);
+}
+
+/* ════════════════ ARTE — PROPUESTA ════════════════ */
+.arte-propuesta { display: flex; flex-direction: column; gap: 16px; }
+.arte-heading {
+  font-family: var(--mono); font-size: 11px;
+  letter-spacing: 0.24em; color: var(--purple);
+  text-transform: uppercase;
+  padding: 20px 0 4px;
+  border-top: 1px solid var(--line-2);
+}
+.arte-heading:first-child { border-top: none; padding-top: 0; }
+
+.arte-vestuario-body {
+  display: grid; grid-template-columns: 1fr 1fr;
+  align-items: start;
+}
+.arte-vestuario-list { border-right: 1px solid rgba(0,0,0,0.1); }
+.arte-vestuario-imgs { padding: 14px; }
+.arte-img-ph {
+  width: 100%; aspect-ratio: 4/3;
+  background: rgba(0,0,0,0.07);
+  border: 1px dashed rgba(0,0,0,0.18);
+  border-radius: 2px;
+}
+.arte-vest-img {
+  width: 100%; display: block;
+  aspect-ratio: 4/3; object-fit: cover;
+  border-radius: 2px;
+}
+.arte-list { margin: 0; padding: 0 0 0 18px; list-style: disc; }
+.arte-list li { margin-bottom: 8px; font-size: 13px; }
+.arte-list li:last-child { margin-bottom: 0; }
+
+.arte-maquillaje-body {
+  display: grid; grid-template-columns: 1fr 200px;
+  gap: 16px; align-items: start;
+}
+.arte-figuras { text-align: center; }
+.arte-figuras-img { width: 100%; display: block; border-radius: 2px; }
+.arte-figuras-label {
+  font-family: var(--mono); font-size: 10px;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  font-weight: 700; margin-top: 8px; color: #555;
+}
+
+.arte-locacion { display: flex; flex-direction: column; gap: 12px; }
+.arte-location-label {
+  font-family: var(--mono); font-size: 11px;
+  letter-spacing: 0.1em; color: #555;
+  margin-bottom: 8px;
+}
+.arte-location-label span { opacity: 0.7; }
+.arte-location-img { width: 100%; display: block; border-radius: 2px; }
+
 /* ════════════════ RESPONSIVE ════════════════ */
 @media (max-width: 1024px) {
   .circle-grid { grid-template-columns: repeat(2, 1fr); }
@@ -617,6 +735,12 @@ a { color: inherit; text-decoration: none; }
   .crew-grid   { grid-template-columns: repeat(2, 1fr); }
   .ftabs       { overflow-x: auto; }
   .dsection-inner { padding: 60px 20px; }
+  .foto-twin-body { grid-template-columns: 1fr; }
+  .ilum-grid   { grid-template-columns: 1fr; }
+  .arte-vestuario-body { grid-template-columns: 1fr; }
+  .arte-vestuario-list { border-right: none; border-bottom: 1px solid rgba(0,0,0,0.1); }
+  .arte-maquillaje-body { grid-template-columns: 1fr; }
+  .dir-refs-grid { grid-template-columns: 1fr; }
 }
 @media (max-width: 480px) {
   .circle-grid,
